@@ -1,7 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodapp/colors.dart';
+import 'package:foodapp/utilities/colors.dart';
+import 'package:foodapp/utilities/dimensions.dart';
 import 'package:foodapp/widgets/Big_text.dart';
 import 'package:foodapp/widgets/Small_text.dart';
 import 'package:foodapp/widgets/TextIconWidget.dart';
@@ -20,7 +21,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   // variable qui stocke la valeur de la page actuelle
   var _currPageValue = 0.0;
   final double _scaleFactor = 0.8;
-  final double _height = 220;
+  final double _height = Dimensions.pageViewTextContainer;
 
   @override
   void initState() {
@@ -45,7 +46,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         Container(
           // color: Colors.redAccent,
           // Hauteur du container contenant l'image
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
               // Contient 5 images
@@ -107,7 +108,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           Container(
             // Hauteur de l'image
-            height: 220,
+            height: Dimensions.pageViewContainer,
             margin: const EdgeInsets.only(left: 10, right: 10),
             // Style
             decoration: BoxDecoration(
@@ -129,7 +130,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             // 2eme Image
             child: Container(
               // Hauteur de la 2eme image
-              height: 120,
+              height: Dimensions.pageViewTextContainer,
               // Retrecir l'image
               margin: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
               // Style
@@ -149,16 +150,15 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   ]),
               //Le Container va servir de padding
               child: Container(
-                padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                    top: Dimensions.height15, left: 15, right: 15),
                 child: Column(
                   // Aligne le titre du resto au centre
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     BigText(text: "Bread & Meat"),
                     // Sizebox sert de margin
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    SizedBox(height: Dimensions.height10),
                     // Row Correspond à l'etoile et
                     Row(
                       children: [
@@ -188,8 +188,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         SmallText(text: "commentaires")
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: Dimensions.height10,
                     ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

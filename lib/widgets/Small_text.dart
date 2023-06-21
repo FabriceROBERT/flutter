@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodapp/utilities/dimensions.dart';
 
 // ignore: must_be_immutable
 class SmallText extends StatelessWidget {
@@ -25,7 +26,10 @@ class SmallText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-          color: color, fontSize: size, fontFamily: 'Roboto', height: height),
+          color: color,
+          fontSize: Dimensions.font12,
+          fontFamily: 'Roboto',
+          height: height),
     );
   }
 }

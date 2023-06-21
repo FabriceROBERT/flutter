@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodapp/home/food_page_body.dart';
 import 'package:foodapp/widgets/Big_text.dart';
 import 'package:foodapp/widgets/Small_text.dart';
-import '../colors.dart';
+import '../utilities/colors.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
@@ -14,13 +14,14 @@ class MainFoodPage extends StatefulWidget {
 class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
+    print("current height is ${MediaQuery.of(context).size.height.toString()}");
     return Scaffold(
       body: Column(
         children: [
           // Header
           Container(
             child: Container(
-              margin: const EdgeInsets.only(top: 70, bottom: 15),
+              margin: const EdgeInsets.only(top: 50, bottom: 15),
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
