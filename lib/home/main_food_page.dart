@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/home/food_page_body.dart';
+import 'package:foodapp/utilities/dimensions.dart';
 import 'package:foodapp/widgets/Big_text.dart';
 import 'package:foodapp/widgets/Small_text.dart';
 import '../utilities/colors.dart';
@@ -21,7 +22,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
           // Header
           Container(
             child: Container(
-              margin: const EdgeInsets.only(top: 50, bottom: 15),
+              margin: EdgeInsets.only(
+                  top: Dimensions.height70, bottom: Dimensions.height15),
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,7 +32,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       children: [
                         BigText(
                           text: "France",
-                          color: AppColors.mainColor,
+                          color: AppColors.mainColor2,
                         ),
                         Row(
                           children: [
@@ -45,22 +47,27 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     ),
                     Center(
                       child: Container(
-                          width: 45,
-                          height: 45,
+                          width: Dimensions.height45,
+                          height: Dimensions.height45,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: AppColors.mainColor,
+                            borderRadius:
+                                BorderRadius.circular(Dimensions.radius15),
+                            color: AppColors.mainColor2,
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.search,
                             color: Colors.white,
+                            size: Dimensions.height20,
                           )),
                     ),
                   ]),
             ),
           ),
           // Body
-          const FoodPageBody()
+          const Expanded(
+              child: SingleChildScrollView(
+            child: FoodPageBody(),
+          ))
         ],
       ),
     );

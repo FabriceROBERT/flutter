@@ -43,6 +43,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // Slider section
         Container(
           // color: Colors.redAccent,
           // Hauteur du container contenant l'image
@@ -68,7 +69,106 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
           ),
-        )
+        ),
+        // "Populaire" texte
+        SizedBox(
+          height: Dimensions.height30,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            // aligner vers le bas
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(
+                text: "Les Plus Populaires",
+              ),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(
+                  text: ".",
+                  color: Colors.black26,
+                ),
+              ),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 2),
+                child: SmallText(
+                  text: "Food Pairing",
+                  color: Colors.black26,
+                ),
+              )
+            ],
+          ),
+        ),
+
+        ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.width30,
+                    right: Dimensions.width30,
+                    bottom: Dimensions.height20),
+                child: Row(
+                  children: [
+                    // Image Section
+                    Container(
+                      width: Dimensions.listViewImg,
+                      height: Dimensions.listViewImg,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
+                        // color: Colors.redAccent,
+                        image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/Image/food12.jpg"),
+                        ),
+                      ),
+                    ),
+                    // Text Container
+                    Expanded(
+                      child: Container(
+                        height: Dimensions.listViewImg,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(Dimensions.radius20),
+                                bottomRight:
+                                    Radius.circular(Dimensions.radius20)),
+                            color: Colors.white),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimensions.width10,
+                              right: Dimensions.width10),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: Dimensions.height10,
+                                ),
+                                BigText(text: "Salade César"),
+                                SizedBox(
+                                  height: Dimensions.height10,
+                                ),
+                                SmallText(
+                                    text:
+                                        "La salade César est une recette de cuisine de salade composée de la cuisine américaine")
+                              ]),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              );
+            }),
       ],
     );
   }
@@ -109,11 +209,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           Container(
             // Hauteur de l'image
             height: Dimensions.pageViewContainer,
-            margin: const EdgeInsets.only(left: 10, right: 10),
+            margin: EdgeInsets.only(
+                left: Dimensions.height10, right: Dimensions.height10),
             // Style
             decoration: BoxDecoration(
               // Bordure arrondis
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(Dimensions.radius30),
               // Couleurs
               color: index.isEven
                   ? const Color(0xFF69c5df)
@@ -132,11 +233,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               // Hauteur de la 2eme image
               height: Dimensions.pageViewTextContainer,
               // Retrecir l'image
-              margin: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+              margin: EdgeInsets.only(
+                  left: 20, right: 20, bottom: Dimensions.width30),
               // Style
               decoration: BoxDecoration(
                   // Bordure arrondis
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(Dimensions.radius30),
                   // Couleurs
                   color: Colors.white,
                   boxShadow: const [
@@ -151,7 +253,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               //Le Container va servir de padding
               child: Container(
                 padding: EdgeInsets.only(
-                    top: Dimensions.height15, left: 15, right: 15),
+                    top: Dimensions.height15,
+                    left: Dimensions.width15,
+                    right: Dimensions.width15),
                 child: Column(
                   // Aligne le titre du resto au centre
                   crossAxisAlignment: CrossAxisAlignment.center,
