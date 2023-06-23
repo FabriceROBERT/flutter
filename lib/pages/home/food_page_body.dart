@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodapp/utilities/colors.dart';
 import 'package:foodapp/utilities/dimensions.dart';
-import 'package:foodapp/widgets/Big_text.dart';
-import 'package:foodapp/widgets/Small_text.dart';
-import 'package:foodapp/widgets/TextIconWidget.dart';
+import 'package:foodapp/widgets/app_column.dart';
+import 'package:foodapp/widgets/big_text.dart';
+import 'package:foodapp/widgets/small_text.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -252,69 +252,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   ]),
               //Le Container va servir de padding
               child: Container(
-                padding: EdgeInsets.only(
-                    top: Dimensions.height15,
-                    left: Dimensions.width15,
-                    right: Dimensions.width15),
-                child: Column(
-                  // Aligne le titre du resto au centre
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    BigText(text: "Bread & Meat"),
-                    // Sizebox sert de margin
-                    SizedBox(height: Dimensions.height10),
-                    // Row Correspond à l'etoile et
-                    Row(
-                      children: [
-                        // On utilise Wrap pour chaque etoile comme un foreach
-                        Wrap(
-                          children: List.generate(
-                            5,
-                            (index) => const Icon(
-                              Icons.star,
-                              color: AppColors.mainColor,
-                              size: 15,
-                            ),
-                          ),
-                        ),
-                        // Espacer les items issus du Row
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        SmallText(text: "4.5"),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        SmallText(text: "1287"),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        SmallText(text: "commentaires")
-                      ],
-                    ),
-                    SizedBox(
-                      height: Dimensions.height10,
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconText(
-                            icon: Icons.circle_sharp,
-                            text: "Normal",
-                            iconColor: AppColors.iconColor1),
-                        IconText(
-                            icon: Icons.location_on,
-                            text: "1.7km",
-                            iconColor: AppColors.mainColor),
-                        IconText(
-                            icon: Icons.access_time_rounded,
-                            text: "32min",
-                            iconColor: AppColors.iconColor2),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.only(
+                      top: Dimensions.height15,
+                      left: Dimensions.width15,
+                      right: Dimensions.width15),
+                  child: const AppColumn(text: "Salade César",)),
             ),
           ),
         ],
