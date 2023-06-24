@@ -16,7 +16,10 @@ class AppColumn extends StatelessWidget {
       // Aligne le titre du resto au centre
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        BigText(text: text),
+        BigText(
+          text: text,
+          size: Dimensions.font20,
+        ),
         // Sizebox sert de margin
         SizedBox(height: Dimensions.height10),
         // Row Correspond à l'etoile et

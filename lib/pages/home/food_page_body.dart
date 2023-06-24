@@ -256,7 +256,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       top: Dimensions.height15,
                       left: Dimensions.width15,
                       right: Dimensions.width15),
-                  child: const AppColumn(text: "Salade César",)),
+                  child: const AppColumn(
+                    text: "Salade César",
+                  )),
             ),
           ),
         ],

@@ -15,7 +15,7 @@ class SmallText extends StatelessWidget {
       {Key? key,
       this.color = const Color(0xFFccc7c5),
       required this.text,
-      this.size = 12,
+      this.size = 15,
       this.height = 1.2
       // "..." Lorsque le texte est trop long, cela se  nomme elipsis
       })
@@ -27,7 +27,7 @@ class SmallText extends StatelessWidget {
       text,
       style: TextStyle(
           color: color,
-          fontSize: Dimensions.font12,
+          fontSize: Dimensions.font20,
           fontFamily: 'Roboto',
           height: height),
     );

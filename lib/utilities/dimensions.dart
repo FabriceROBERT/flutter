@@ -44,6 +44,10 @@ class Dimensions {
   static double listViewImg = screenWidth / 4.44;
   static double listViewText = screenWidth / 3.9;
 
+  // bottom Height
+  static double bottomHeight = screenHeight / 6.50;
+
   // Img Popular Food Detail
-  static double popularFoodImg = screenHeight / 2.23;
+  static double popularFoodImg = screenHeight / 2.91;
 }
+// 2.23
